@@ -33,6 +33,7 @@
 }
 body{
     background: var(--Very-Dark-Blue);
+    display: none;
 }
 .container{
     height: fit-content;
