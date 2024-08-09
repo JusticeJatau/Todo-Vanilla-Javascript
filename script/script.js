@@ -230,7 +230,3 @@ todo_container.addEventListener('touchmove', (e)=>{
         todo_container.insertBefore(draggable, nextSibling)
     }
 })
-
-setTimeout(()=>{
-    body.style.display = 'block'
-}, 500)
