@@ -231,3 +231,4 @@ todo_container.addEventListener('touchmove', (e)=>{
         todo_container.insertBefore(draggable, nextSibling)
     }
 })
+alert("hi")
