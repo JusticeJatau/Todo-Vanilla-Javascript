@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/JusticeJatau/Todo-Vanilla-Javascript)
-- Live Site URL: [Add live site URL here](https://todo-app-vanilla-javascript.vercel.app/)
+- Solution URL: [here](https://github.com/JusticeJatau/Todo-Vanilla-Javascript)
+- Live Site URL: [here](https://todo-app-vanilla-javascript.vercel.app/)
 
 ## My process
 
