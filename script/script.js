@@ -26,7 +26,7 @@ var angle = 0
 
 alert("check 2")
 
-onload(loadSetting())
+loadSetting()
 
 mode.addEventListener('click', ()=>{
     if(dark === "true"){
