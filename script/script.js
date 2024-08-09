@@ -1,3 +1,4 @@
+alert("hi")
 const mode = document.querySelector(".mode")
 var body, background, todo_search, todo_body, mode_element, sort_el, count, count_el, check_el, input, clear, active, completed
     body = document.querySelector("body")
