@@ -24,6 +24,8 @@ var body, background, todo_search, todo_body, mode_element, sort_el, count, coun
 var dark = "true"
 var angle = 0
 
+alert("check 2")
+
 onload(loadSetting())
 
 mode.addEventListener('click', ()=>{
@@ -35,6 +37,7 @@ mode.addEventListener('click', ()=>{
     saveSetting()
     Refresh()
 })
+alert("check 3")
 
 function updateCount(){
     count.textContent = "0"
@@ -44,6 +47,7 @@ function updateCount(){
         }
     })
 }
+alert("check 4")
 
 function saveSetting(){
     localStorage.setItem("mode", dark)
@@ -231,4 +235,3 @@ todo_container.addEventListener('touchmove', (e)=>{
         todo_container.insertBefore(draggable, nextSibling)
     }
 })
-alert("hi")
