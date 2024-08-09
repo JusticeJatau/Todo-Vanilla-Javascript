@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+:root{
+    /* Colors */
+    /* Primary */
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    /* Light Theme */
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue-light: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue-light: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+    /* Dark Theme */
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue-dark: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+    --Dark-Grayish-Blue-dark: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
+
+    /* Font */
+    --Font-size: 18px;
+}
+body{
+    background: var(--Very-Dark-Blue);
+    display: none;
+}
+.container{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bg img{
+    width: 100%;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin: 50px 20px;
+    /* border: 1px solid pink; */
+    width: 500px;
+    z-index: 1;
+}
+.todo .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+}
+.todo .header h1{
+    font-size: 2.5em;/*Fix the issue with space under the h1 text*/
+    letter-spacing: 10px;
+    color: var(--Very-Light-Gray);
+}
+.todo .header .mode{
+    cursor: pointer;
+    transition:  transform .5s ease;
+}
+/* .header .mode{
+    transform: rotateZ(360deg);
+} */
+.todo .add,
+.todo .todo-body{
+    background: var(--Very-Dark-Desaturated-Blue);
+    border-radius: 5px;
+    width: 100%;
+}
+.todo .add{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .5);
+}
+input[type="text"]{
+    border: none;
+    outline: none;
+    color: var(--Light-Grayish-Blue-dark);
+    font-size: 18px;
+    height: 20px;
+    width: 80%;
+    background: none;
+}
+input[type="text"]::placeholder{
+    font-size: 16px;
+    color: var(--Dark-Grayish-Blue-dark);
+}
+.todo .todo-body{
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+}
+.todo .todo-body .content{
+    height: 300px;
+    overflow-y: auto;
+}
+.todo-body .content::-webkit-scrollbar{
+    display: none;
+}
+.todo .todo-body .content-footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 20px;
+    border-top: 1px solid var(--Very-Dark-Grayish-Blue-1);
+}
+.content-footer .sort{
+    display: flex;
+    gap: 15px;
+}
+.sort *,
+.clear *{
+    cursor: pointer;
+    user-select: none;
+}
+.sort *:hover,
+.clear *:hover{
+    color: var(--Light-Grayish-Blue-dark);
+}
+body.light .sort *:hover,
+body.light .clear *:hover{
+    color: var(--Very-Dark-Grayish-Blue);
+}
+.sort *:hover{
+    font-weight: 600;
+}
+
+.todo .footer{
+    margin-top: 20px;
+}
+
+span, p, h1{
+    color: var(--Dark-Grayish-Blue-dark);
+    cursor: default;
+}
+
+input[type="checkbox"]{
+    appearance:  none;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--Dark-Grayish-Blue-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="checkbox"]:hover:not(:disabled):not(:checked){
+    border: 1px solid hsl(192, 100%, 67%);
+}
+input[type="checkbox"]:checked{
+    background: var(--Check-Background);
+    border: none;
+}
+.todo-body.light input[type="checkbox"]:checked{
+    border: none;
+}
+input[type="checkbox"]:checked::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: url("../images/icon-check.svg") no-repeat;
+    transform: scale(1.1);
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--Very-Dark-Grayish-Blue-1);
+}
+.task > img{
+    display: none;
+    transition: 0.5s;
+}
+.task:hover > img{
+    display: block;
+}
+.task div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.task div span{
+    color: var(--Light-Grayish-Blue-dark);
+}
+
+input[type="checkbox"]:disabled{
+    cursor: default;
+}
+.active{
+    color: var(--Bright-Blue);
+}
+.sort  span.active:hover{
+    color: var(--Bright-Blue);
+}
+.light,
+.todo .light{
+    background: var(--Very-Light-Gray);
+}
+.todo .light input[type="text"]{
+    color: var(--Very-Dark-Grayish-Blue);
+}
+.todo .light input[type="checkbox"]{
+    border: 1px solid var(--Dark-Grayish-Blue-light);
+}
+.todo .light .task{
+    border-bottom: 1px solid var(--Light-Grayish-Blue-light);
+}
+.todo .light .task span{
+    color: var(--Very-Dark-Grayish-Blue);
+}
+.todo .light .content-footer{
+    border-top: 1px solid var(--Light-Grayish-Blue-light);
+}
+.todo .add.light {
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .2);
+}
+.todo .todo-body.light {
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .2);
+}
+
+.close{
+    cursor: pointer;
+}
+.task .done{
+    text-decoration: line-through;
+    color: var(--Dark-Grayish-Blue-dark);
+}
+.todo-body.light .task .done{
+    color: var(--Light-Grayish-Blue-light);
+}
+.hidden{
+    display: none;
+}
+.dragging{
+    opacity: .5;
+}
+.mobile_bck{
+    display: none;
+}
+.todo .sort{
+    display: none;
+}
+.todo .todo-body .sort{
+    display: flex;
+}
+.attribution{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 0;
+    border-top: 1px solid #fff;
+    color: #fff;
+    font-size: clamp(10px, 13px, 18px);
+}
+.attribution a{
+    text-decoration: underline;
+    color: var(--Very-Light-Grayish-Blue);
+    font-weight: 600;
+}
+body.light .attribution{
+    border-top: 1px solid var(--Very-Dark-Grayish-Blue);
+    color: var(--Very-Dark-Grayish-Blue);
+}
+body.light .attribution a{
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+@media (max-width:500px){
+    .desktop_bck{
+        display: none;
+    }
+    .bg{
+        width: 100%;
+    }
+    .mobile_bck{
+        display: block;
+    }
+    .todo .header h1{
+        font-size: 2em;/*Fix the issue with space under the h1 text*/
+        letter-spacing: 10px;
+        color: var(--Very-Light-Gray);
+    }
+    .todo .content-footer .sort{
+        display: none;
+    }
+    .todo .sort{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+        border-radius: 5px;
+        background: var(--Very-Dark-Desaturated-Blue);
+    }
+    body.light .todo .sort{
+        box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .2);
+        background: var(--Very-Light-Gray);
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bg">
+            <img class="desktop_bck" src="images/bg-desktop-dark.jpg" alt="">
+            <img class="mobile_bck" src="images/bg-mobile-dark.jpg" alt="">
+        </div>
+        <div class="todo">
+            <div class="header">
+                <h1>TODO</h1>
+                <img class="mode" src="images/icon-sun.svg" alt="light">
+            </div>
+            <div class="add">
+                <input class="check" disabled type="checkbox" >
+                <input type="text" class="input" placeholder="Create a new todo...">
+            </div>
+            <div class="todo-body">
+                <div class="content">
+                    
+                </div>
+                <div class="content-footer">
+                    <div>
+                        <span class="count">5</span>
+                        <span>items left</span>
+                    </div>
+                    <div class="sort">
+                        <span class="active" onclick="sortTodo('')">All</span>
+                        <span class="sort-active" onclick="sortTodo('active')">Active</span>
+                        <span class="sort-completed" onclick="sortTodo('done')">Completed</span>
+                    </div>
+                    <div class="clear">
+                        <span>Clear Completed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sort">
+                <span class="active" onclick="sortTodo('')">All</span>
+                <span class="sort-active" onclick="sortTodo('active')">Active</span>
+                <span class="sort-completed" onclick="sortTodo('done')">Completed</span>
+            </div>
+            <div class="footer">
+                <p>Drag and drop to reorder list</p>
+            </div>
+        </div>
+    </div>
+
+  <div class="attribution">
+    Challenge by: <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a>
+    Coded by: <a href="https://www.frontendmentor.io/JusticeJatau"target="_blank">Justice Jatau.</a>
+  </div>
+  <script src="script/script.js"></script>
+</body>
+</html>
