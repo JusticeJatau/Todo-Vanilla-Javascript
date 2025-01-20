@@ -132,4 +132,4 @@ I'll like to improve more on the drag and drop functionality, because it have so
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/JusticeJatau)
+- Frontend Mentor - [@justicejatau](https://www.frontendmentor.io/profile/JusticeJatau)
